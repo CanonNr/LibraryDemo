@@ -1,0 +1,17 @@
+server:
+  port: 8989
+spring:
+  redis:
+    host: localhost
+    timeout: PT30M #30分钟
+  session:
+      store-type: redis
+      timeout: PT30M
+  mvc:
+    static-path-pattern: /static/**
+  resources:
+    static-locations:
+      - classpath:/static/
+logging:
+  level:
+    root: debug
