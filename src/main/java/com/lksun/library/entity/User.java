@@ -63,6 +63,4 @@ public class User {
     public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
-
-
 }
