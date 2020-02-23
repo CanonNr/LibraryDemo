@@ -13,7 +13,10 @@ public class User {
     private Integer id;
 
     @Column(name = "username")
-    private String userName;
+    private String username;
+
+    @Column(name = "password")
+    private String password;
 
     @Column(name = "email")
     private String email;
@@ -24,6 +27,7 @@ public class User {
     @Column(name = "birthday")
     private String birthday;
 
+
     public Integer getId() {
         return id;
     }
@@ -32,12 +36,20 @@ public class User {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {
@@ -62,5 +74,17 @@ public class User {
 
     public void setBirthday(String birthday) {
         this.birthday = birthday;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", birthday='" + birthday + '\'' +
+                '}';
     }
 }
