@@ -15,9 +15,9 @@ import java.util.*;
 public class AuthFilter implements Filter {
 
     private static final Set<String> ALLOWED_PATHS = Collections.unmodifiableSet(new HashSet<>(
-            Arrays.asList("/login", "/register")));
+            Arrays.asList("/login", "/register","/druid")));
     private static final Set<String> FUZZY_ALLOWED_PATHS = Collections.unmodifiableSet(new HashSet<>(
-            Arrays.asList("/login/**","/static/**","/register/**")));
+            Arrays.asList("/login/**","/static/**","/register/**","/druid/**")));
 
     /**
      * 可以初始化Filter在web.xml里面配置的初始化参数

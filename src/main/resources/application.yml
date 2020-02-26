@@ -1,5 +1,8 @@
 server:
   port: 8989
+logging:
+  level:
+    root: info
 spring:
   redis:
     host: localhost
@@ -17,9 +20,14 @@ spring:
     password: root
     url: jdbc:mysql://127.0.0.1:3306/demo
     driver‐class‐name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource  # 修改配置源
     schema:
-      - classpath:data.sql
+      - classpath:data.sql    # 构建数据
     initialization-mode: always
-logging:
-  level:
-    root: info
+    druid:
+      stat-view-servlet:
+        enabled: true   # 开启 默认false
+        url-pattern:
+          - /druid/*    # 监控的地址
+        login-username: admin
+        login-password: admin
