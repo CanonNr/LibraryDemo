@@ -17,7 +17,9 @@ spring:
     password: root
     url: jdbc:mysql://127.0.0.1:3306/demo
     driver‐class‐name: com.mysql.jdbc.Driver
-
+    schema:
+      - classpath:data.sql
+    initialization-mode: always
 logging:
   level:
     root: info
