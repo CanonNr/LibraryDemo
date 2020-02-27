@@ -22,12 +22,12 @@ spring:
     driver‐class‐name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource  # 修改配置源
     schema:
-      - classpath:data.sql    # 构建数据
+      - classpath:demo.sql    # 构建数据
     initialization-mode: always
     druid:
       stat-view-servlet:
         enabled: true   # 开启 默认false
         url-pattern:
           - /druid/*    # 监控的地址
-        login-username: admin
-        login-password: admin
+        login-username: druid
+        login-password: druid
