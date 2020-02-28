@@ -24,10 +24,40 @@
                 </div>
             </div>
 
+            <!-- row star-->
             <div class="row">
 
-            </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Basic Table</h4>
+                            <h6 class="card-subtitle">Add class <code>.table</code></h6>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>姓名</th>
+                                        <th>联系方式</th>
+                                        <th>加入时间</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="user,userStat : ${list}">
+                                            <td th:text="${user.id}"></td>
+                                            <td th:text="${user.name}"></td>
+                                            <td th:text="${user.mob}"></td>
+                                            <td th:text="${user.create_time}"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
+            <!-- row end -->
         </div>
     </div>
 

@@ -1,6 +1,7 @@
 package com.lksun.library.Mapper;
 
 
+import com.lksun.library.entity.Page.PageRequest;
 import com.lksun.library.entity.Reader;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -15,7 +16,7 @@ public interface ReaderMapper {
 
     int createReader(Reader reader);
 
-    List<Reader> get();
+    List<Reader> get(PageRequest pageRequest);
 
     @Select("select * from readers where id = #{id}")
     Reader getById(@Param("id") Integer id);

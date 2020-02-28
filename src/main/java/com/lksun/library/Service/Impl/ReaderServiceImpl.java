@@ -2,6 +2,7 @@ package com.lksun.library.Service.Impl;
 
 import com.lksun.library.Mapper.ReaderMapper;
 import com.lksun.library.Service.ReaderService;
+import com.lksun.library.entity.Page.PageRequest;
 import com.lksun.library.entity.Reader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,8 +20,9 @@ public class ReaderServiceImpl implements ReaderService {
     }
 
     @Override
-    public List<Reader> get() {
-        return readerMapper.get();
+    public List<Reader> get(PageRequest pageRequest) {
+        System.out.println(pageRequest);
+        return readerMapper.get(pageRequest);
     }
 
     @Override

@@ -36,5 +36,5 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
   mapper-locations: classpath:mapping/*Mapper.xml
-  config-location: classpath:mapping/config.xml
+  #config-location: classpath:mapping/config.xml
   type-aliases-package: com.lksun.library.entity
