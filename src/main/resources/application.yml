@@ -19,7 +19,7 @@ spring:
     username: root
     password: root
     url: jdbc:mysql://127.0.0.1:3306/demo
-    driver‐class‐name: com.mysql.jdbc.Driver
+    driver‐class‐name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource  # 修改配置源
     schema:
       - classpath:demo.sql    # 构建数据
@@ -36,4 +36,5 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
   mapper-locations: classpath:mapping/*Mapper.xml
+  config-location: classpath:mapping/config.xml
   type-aliases-package: com.lksun.library.entity

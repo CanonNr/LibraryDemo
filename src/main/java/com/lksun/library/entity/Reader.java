@@ -63,4 +63,15 @@ public class Reader {
     public void setCreate_time(Date create_time) {
         this.create_time = create_time;
     }
+
+    @Override
+    public String toString() {
+        return "Reader{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", mob=" + mob +
+                ", create_time=" + create_time +
+                '}';
+    }
 }

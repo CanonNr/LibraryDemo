@@ -22,4 +22,9 @@ public class ReaderServiceImpl implements ReaderService {
     public List<Reader> get() {
         return readerMapper.get();
     }
+
+    @Override
+    public Reader getById(Integer id) {
+        return readerMapper.getById(id);
+    }
 }

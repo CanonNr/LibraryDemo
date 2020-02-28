@@ -10,5 +10,5 @@ public interface ReaderService {
 
     List<Reader> get();
 
-
+    Reader getById(Integer id);
 }
