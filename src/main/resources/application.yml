@@ -31,3 +31,9 @@ spring:
           - /druid/*    # 监控的地址
         login-username: druid
         login-password: druid
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.lksun.library.entity

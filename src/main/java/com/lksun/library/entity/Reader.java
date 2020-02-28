@@ -1,6 +1,7 @@
 package com.lksun.library.entity;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 import java.util.Date;
 
 @Entity
@@ -17,7 +18,7 @@ public class Reader {
     private String password;
 
     @Column(name = "mob")
-    private Integer mob;
+    private BigInteger mob;
 
     @Column(name = "create_time")
     private Date create_time;
@@ -47,11 +48,11 @@ public class Reader {
         this.password = password;
     }
 
-    public Integer getMob() {
+    public BigInteger getMob() {
         return mob;
     }
 
-    public void setMob(Integer mob) {
+    public void setMob(BigInteger mob) {
         this.mob = mob;
     }
 

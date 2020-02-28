@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lksun.library.Mapper.ReaderMapper">
+
+<!--    <resultMap id="BaseResultMap" type="Reader">-->
+<!--        <id column="id" jdbcType="INTEGER" property="id" />-->
+<!--        <result column="name" jdbcType="VARCHAR" property="name" />-->
+<!--        <result column="password" jdbcType="VARCHAR" property="password" />-->
+<!--        <result column="mob" jdbcType="VARCHAR" property="mob" />-->
+<!--        <result column="create_time" jdbcType="DATE" property="create_time" />-->
+<!--    </resultMap>-->
+
+    <select id="get" resultType="com.lksun.library.entity.Reader">
+        select * from readers
+    </select>
+
+</mapper>
