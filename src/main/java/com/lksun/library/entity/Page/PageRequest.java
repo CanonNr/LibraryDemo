@@ -1,9 +1,13 @@
 package com.lksun.library.entity.Page;
 
 public class PageRequest {
-    private int pageNum;
+    // 当前页数 默认为1
+    private int pageNum = 1;
 
-    private int pageSize;
+    // 每页显示的数量 默认为5
+    private int pageSize = 5;
+
+    private int offSet;
 
     public int getPageNum() {
 
@@ -16,8 +20,17 @@ public class PageRequest {
     public int getPageSize() {
         return pageSize;
     }
+
     public void setPageSize(int pageSize) {
         this.pageSize = pageSize;
+    }
+
+    public int getOffSet() {
+        return (this.pageNum - 1) * this.pageSize;
+    }
+
+    public void setOffSet(int offSet) {
+        this.offSet = offSet;
     }
 
     @Override
@@ -25,6 +38,7 @@ public class PageRequest {
         return "PageRequest{" +
                 "pageNum=" + pageNum +
                 ", pageSize=" + pageSize +
+                ", offSet=" + offSet +
                 '}';
     }
 }

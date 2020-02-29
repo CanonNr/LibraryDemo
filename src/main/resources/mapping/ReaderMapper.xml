@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- 命名空间与Mapper文件对应 -->
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!-- 命名空间与Mapper文件对应 -->
 <mapper namespace="com.lksun.library.Mapper.ReaderMapper">
 
-    <select id="get" resultType="com.lksun.library.entity.Reader">
-        select * from readers
+    <select id="getCount" resultType="java.lang.Integer">
+        select count(*) from readers
+    </select>
+    <select id="get" resultType="Reader">
+        select * from readers LIMIT #{offSet},#{pageSize}
+        <!-- LIMIT (#{pageNum}-1)*#{pageSize},#{pageSize};  错误 -->
+        <!-- LIMIT ${(pageNum-1)*pageSize},${pageSize};  正确-->
     </select>
 
 </mapper>

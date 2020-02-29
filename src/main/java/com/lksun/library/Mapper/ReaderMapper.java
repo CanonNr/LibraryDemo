@@ -14,9 +14,11 @@ import java.util.List;
 //@Mapper  // 如果配置了MapperScan则不需要此注解了
 public interface ReaderMapper {
 
-    int createReader(Reader reader);
+    Integer createReader(Reader reader);
 
     List<Reader> get(PageRequest pageRequest);
+
+    Integer getCount();
 
     @Select("select * from readers where id = #{id}")
     Reader getById(@Param("id") Integer id);

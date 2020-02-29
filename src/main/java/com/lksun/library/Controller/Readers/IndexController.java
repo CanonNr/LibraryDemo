@@ -3,6 +3,7 @@ package com.lksun.library.Controller.Readers;
 import com.lksun.library.Service.ReaderService;
 import com.lksun.library.entity.Page.PageRequest;
 import com.lksun.library.entity.Reader;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,16 +17,16 @@ import java.util.Map;
 @RequestMapping("/reader")
 public class IndexController {
 
-    private final ReaderService readerService;
+    @Autowired
+    private  ReaderService readerService;
 
-    public IndexController(ReaderService readerService) {
-        this.readerService = readerService;
-    }
 
     @RequestMapping(value = "",method = RequestMethod.GET)
     public String list(PageRequest pageRequest, Map<String,Object> map){
-        System.out.println(pageRequest);
         List<Reader> readerList = readerService.get(pageRequest);
+        System.out.println(readerList);
+        System.out.println(pageRequest.getOffSet());
+        System.out.println(readerService.getCount());
         map.put("list",readerList);
         return "/reader/index";
     }
@@ -33,8 +34,6 @@ public class IndexController {
     @RequestMapping(value = "get/{id}",method = RequestMethod.GET)
     public String getReader(@PathVariable("id") Integer id){
         Reader reader = readerService.getById(id);
-
-        System.out.println(reader.toString());
         return "/reader/index";
     }
 }

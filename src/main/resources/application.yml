@@ -22,7 +22,7 @@ spring:
     driver‐class‐name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource  # 修改配置源
     schema:
-      - classpath:demo.sql    # 构建数据
+      #- classpath:demo.sql    # 构建数据
     initialization-mode: always
     druid:
       stat-view-servlet:
@@ -36,5 +36,5 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
   mapper-locations: classpath:mapping/*Mapper.xml
-  #config-location: classpath:mapping/config.xml
-  type-aliases-package: com.lksun.library.entity
+  #config-location: classpath:mapping/config.xml # 主配置文件
+  type-aliases-package: com.lksun.library.entity # 作用:在mapper.xml中resultType属性就无须写完整的包路径了只需要写一个类名

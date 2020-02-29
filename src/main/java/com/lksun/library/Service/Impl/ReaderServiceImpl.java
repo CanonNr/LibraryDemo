@@ -21,12 +21,15 @@ public class ReaderServiceImpl implements ReaderService {
 
     @Override
     public List<Reader> get(PageRequest pageRequest) {
-        System.out.println(pageRequest);
         return readerMapper.get(pageRequest);
     }
 
     @Override
     public Reader getById(Integer id) {
         return readerMapper.getById(id);
+    }
+
+    public Integer getCount(){
+        return readerMapper.getCount();
     }
 }

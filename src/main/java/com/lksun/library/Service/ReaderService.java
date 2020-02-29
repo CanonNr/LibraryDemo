@@ -12,4 +12,6 @@ public interface ReaderService {
     List<Reader> get(PageRequest pageRequest);
 
     Reader getById(Integer id);
+
+    Integer getCount();
 }

@@ -3,54 +3,58 @@ package com.lksun.library.entity.Page;
 import java.util.List;
 
 public class PageResult {
-    /**
-     * 当前页码
-     */
-    private int pageNum;
-    /**
-     * 每页数量
-     */
-    private int pageSize;
-    /**
-     * 记录总数
-     */
-    private long totalSize;
-    /**
-     * 页码总数
-     */
-    private int totalPages;
-    /**
-     * 数据模型
-     */
+
+    // 当前页码
+    private Integer pageNum;
+
+    // 每页数量
+    private Integer pageSize;
+
+    // 数据总条数
+    private Integer totalSize;
+
+    // 总页数
+    private Integer totalPages;
+
+    // 返回数据
     private List<?> content;
 
-    public int getPageNum() {
+    public Integer getPageNum() {
         return pageNum;
     }
-    public void setPageNum(int pageNum) {
+
+    public void setPageNum(Integer pageNum) {
         this.pageNum = pageNum;
     }
-    public int getPageSize() {
+
+    public Integer getPageSize() {
         return pageSize;
     }
-    public void setPageSize(int pageSize) {
+
+    public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
     }
-    public long getTotalSize() {
+
+    public Integer getTotalSize() {
         return totalSize;
     }
-    public void setTotalSize(long totalSize) {
+
+    public void setTotalSize(Integer totalSize) {
         this.totalSize = totalSize;
     }
+
     public int getTotalPages() {
         return totalPages;
     }
-    public void setTotalPages(int totalPages) {
+
+    public void setTotalPages(Integer totalPages) {
         this.totalPages = totalPages;
     }
+
     public List<?> getContent() {
         return content;
     }
+
     public void setContent(List<?> content) {
         this.content = content;
     }
