@@ -19,6 +19,19 @@ public class PageResult {
     // 返回数据
     private List<?> content;
 
+    /**
+     * @param content 返回的数据
+     * @param pageRequest  分页类
+     * @param totalSize 数据的总条数
+     */
+    public PageResult(List<?> content, PageRequest pageRequest, Integer totalSize){
+        this.content = content;
+        this.totalSize = totalSize;
+        this.pageSize = pageRequest.getPageSize();
+        this.pageNum = pageRequest.getPageNum();
+        this.totalPages = (int) Math.ceil(this.totalSize / this.pageSize);  // 向上取整并强转为int类型
+    }
+
     public Integer getPageNum() {
         return pageNum;
     }
