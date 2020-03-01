@@ -40,6 +40,7 @@
                                         <th>姓名</th>
                                         <th>联系方式</th>
                                         <th>加入时间</th>
+                                        <th>操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -48,6 +49,7 @@
                                             <td th:text="${reader.name}"></td>
                                             <td th:text="${reader.mob}"></td>
                                             <td th:text="${reader.create_time}"></td>
+                                            <td > <a class="layui-btn layui-btn-normal layui-btn-sm" href="#"> 删除 </a> </td>
                                         </tr>
                                     </tbody>
                                 </table>
