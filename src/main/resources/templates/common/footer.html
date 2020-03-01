@@ -26,6 +26,10 @@
     <script src="/static/dist/js/dashboard1.js"></script>
 
     <script>
+        function replaceParamVal(oUrl ,paramName,replaceWith) {
+            const re = eval('/(' + paramName + '=)([^&]*)/gi');
+            return oUrl.replace(re, paramName + '=' + replaceWith);
+        }
         layer.msg('hello');
     </script>
 </div>

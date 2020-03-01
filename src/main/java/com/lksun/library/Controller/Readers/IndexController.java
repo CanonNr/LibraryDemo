@@ -23,8 +23,7 @@ public class IndexController {
     public String list(PageRequest pageRequest, Map<String,Object> map){
         List<Reader> readerList = readerService.get(pageRequest);
         PageResult pageResult = new PageResult(readerList,pageRequest,readerService.getCount());
-        System.out.println(pageResult.toString());
-        map.put("list",readerList);
+        map.put("pageResult",pageResult);
         return "/reader/index";
     }
 

@@ -43,15 +43,16 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                        <tr th:each="user,userStat : ${list}">
-                                            <td th:text="${user.id}"></td>
-                                            <td th:text="${user.name}"></td>
-                                            <td th:text="${user.mob}"></td>
-                                            <td th:text="${user.create_time}"></td>
+                                        <tr th:each="reader,readerStat : ${pageResult.getContent()}">
+                                            <td th:text="${readerStat.count}"></td>
+                                            <td th:text="${reader.name}"></td>
+                                            <td th:text="${reader.mob}"></td>
+                                            <td th:text="${reader.create_time}"></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
+                            <div id="page"></div>
                         </div>
                     </div>
                 </div>
@@ -65,3 +66,29 @@
 
 </body>
 </html>
+<script>
+    // 分页
+    layui.use(['laypage', 'layer'], function() {
+        const totalSize = [[${pageResult.getTotalSize()}]];
+        const pageSize = [[${pageResult.getPageSize()}]];
+        const pageNum = [[${pageResult.getPageNum()}]]
+        const laypage = layui.laypage, layer = layui.layer;
+        laypage.render({
+            elem: 'page',
+            count: totalSize,
+            layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip'],
+            limit: pageSize,
+            limits: [1, 2, 5],
+            curr:pageNum,
+            jump: function (obj,first) {
+                console.log(obj);
+                if(!first) {
+                    let url = window.location.href;
+                    url = replaceParamVal(url, 'pageNum', obj.curr);
+                    url = replaceParamVal(url, 'pageSize', obj.limit);
+                    window.location.href = url;
+                }
+            }
+        });
+    })
+</script>
