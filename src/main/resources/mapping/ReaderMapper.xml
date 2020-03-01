@@ -12,4 +12,9 @@
         <!-- LIMIT ${(pageNum-1)*pageSize},${pageSize};  正确-->
     </select>
 
+    <!-- keyProperty 返回主键 -->
+    <insert id="createReader" keyProperty="id">
+        insert into readers(name,password,mob,create_time) values (#{name},#{password},#{mob},#{create_time})
+    </insert>
+
 </mapper>

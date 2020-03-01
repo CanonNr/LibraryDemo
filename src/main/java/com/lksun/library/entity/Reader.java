@@ -1,5 +1,8 @@
 package com.lksun.library.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.util.Date;
@@ -21,6 +24,11 @@ public class Reader {
     private BigInteger mob;
 
     @Column(name = "create_time")
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(
+            pattern = "yyyy-MM-dd HH:mm:ss",
+            timezone = "GMT+8"
+    )
     private Date create_time;
 
 

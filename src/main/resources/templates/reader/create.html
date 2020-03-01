@@ -19,7 +19,47 @@
         </div>
 
         <div class="row">
+            <div class="col-lg-6">
+                <form class="layui-form" action="/reader/create/action" method="get">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" >姓名</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="name" required  lay-verify="required" placeholder="请填写读者姓名" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
 
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">密码</label>
+                        <div class="layui-input-block">
+                            <input type="password" name="password" placeholder="请输入密码,默认为空" autocomplete="off" class="layui-input">
+                        </div>
+                         <div class="layui-form-mid layui-word-aux">用于借阅图书时</div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">手机号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="mob" placeholder="请填写读者手机号码" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">时间</label>
+                        <div class="layui-input-block">
+                            <input type="text" id="create_time" name="create_time" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">入会时间</div>
+                    </div>
+
+                    <div class="layui-form-item">
+
+                        <div class="layui-input-block">
+                            <input type="submit" class="layui-btn-danger">
+                        </div>
+
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
@@ -27,3 +67,14 @@
 <div th:replace="common/footer :: script"></div>
 </body>
 </html>
+<script>
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#create_time',
+            type: 'datetime'
+        });
+    });
+</script>

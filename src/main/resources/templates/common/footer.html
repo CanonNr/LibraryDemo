@@ -26,9 +26,32 @@
     <script src="/static/dist/js/dashboard1.js"></script>
 
     <script>
-        function replaceParamVal(oUrl ,paramName,replaceWith) {
-            const re = eval('/(' + paramName + '=)([^&]*)/gi');
-            return oUrl.replace(re, paramName + '=' + replaceWith);
+        /**
+         * 替换url中指定的参数,如果不存在则添加
+         * @param url url
+         * @param param 参数名
+         * @param paramVal 参数值
+         * @returns {string}
+         */
+        function replaceParamVal(url, param, paramVal) {
+            let newAdditionalURL = "";
+            let tempArray = url.split("?");
+            let baseURL = tempArray[0];
+            let additionalURL = tempArray[1];
+            let temp = "";
+
+            if (additionalURL) {
+                tempArray = additionalURL.split("&");
+                for (let i=0; i<tempArray.length; i++){
+                    if(tempArray[i].split('=')[0] !== param){
+                        newAdditionalURL += temp + tempArray[i];
+                        temp = "&";
+                    }
+                }
+            }
+
+            let rows_txt = temp + "" + param + "=" + paramVal;
+            return baseURL + "?" + newAdditionalURL + rows_txt;
         }
         layer.msg('hello');
     </script>
