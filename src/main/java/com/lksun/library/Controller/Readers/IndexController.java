@@ -20,6 +20,8 @@ public class IndexController {
 
     @Autowired
     private  ReaderService readerService;
+    private Integer id;
+    private Map<String, Object> map;
 
     @RequestMapping(value = "",method = RequestMethod.GET)
     public String list(PageRequest pageRequest, Map<String,Object> map){
@@ -56,7 +58,12 @@ public class IndexController {
             map.put("url","/reader/");
             return "common/error";
         }
-
-
     }
+
+    @RequestMapping(value = "delete/{id}",method = RequestMethod.GET)
+    public String delete(@PathVariable("id") Integer id, Map<String,Object> map){
+        return "123/123￿￿￿";
+    }
+
+
 }
