@@ -1,0 +1,17 @@
+spring:
+
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/demo?serverTimezone=UTC
+    driver‐class‐name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource  # 修改配置源
+    schema:
+    #  - classpath:dev.sql    # 构建数据
+    initialization-mode: always
+
+
+  redis:
+    host: 172.16.2.30
+    password: pjWfpKLb7j
+    timeout: PT30M #30分钟
