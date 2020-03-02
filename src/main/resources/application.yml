@@ -5,7 +5,7 @@ logging:
     root: info
 spring:
   profiles:
-    active: dev  # prod dev
+    active: prod  # prod dev
   session:
       store-type: redis
       timeout: PT30M

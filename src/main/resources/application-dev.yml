@@ -7,7 +7,7 @@ spring:
     driver‐class‐name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource  # 修改配置源
     schema:
-      - classpath:dev.sql    # 构建数据
+    #  - classpath:dev.sql    # 构建数据
     initialization-mode: always
 
   redis:
