@@ -46,6 +46,6 @@ public class LoginController {
         String username = user.getUsername();
         String password = user.getPassword();
         User byUsername = userRepository.findByUsername(username);
-        return password.equals(byUsername.getPassword());
+        return (byUsername != null && password.equals(byUsername.getPassword()));
     }
 }
